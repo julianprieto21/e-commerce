@@ -1,0 +1,37 @@
+---
+import Category from "./Category.astro"
+
+
+const DATA = [
+  {
+    id: "national",
+    name: "National Teams"
+  },
+  {
+    id: "premier-league",
+    name: "Premier League"
+  },
+  {
+    id: "bundesliga",
+    name: "Bundesliga"
+  },
+  {
+    id: "serie-a",
+    name: "Serie A"
+  }
+]
+
+---
+
+<main >
+  <div class="relative mx-auto px-8 max-w-7xl py-12   md:px-12">
+    <div
+      class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 ">
+      {
+        DATA.map((category) => {
+          return <Category category={category} />
+        })
+      }
+    </div>
+  </div>
+</main>
