@@ -90,6 +90,13 @@ module.exports = {
       }),
 
       colors: {
+        color: {
+          100: "#182825ff",
+          200: "#016fb9ff",
+          300: "#22aed1ff",
+          400:"#6d8ea0ff",
+          500: "#afa98dff",
+        },
         charcoal: {
           50: "#ECEEEC",
           100: "#D7DAD7",
