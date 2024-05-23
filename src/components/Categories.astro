@@ -1,35 +1,38 @@
 ---
-import Category from "./Category.astro"
+import Category from "./Category.astro";
+import BundesligaIcon from "./icons/BundesligaIcon.astro";
 
-
-const DATA = [
+export const CATEGORIES = [
   {
     id: "national",
-    name: "National Teams"
+    name: "National Teams",
+    desc: "Camisetas de selecciones nacionales",
   },
   {
     id: "premier-league",
-    name: "Premier League"
+    name: "Premier League",
+    desc: "Camisetas de la Premier League de Inglaterra",
   },
   {
     id: "bundesliga",
-    name: "Bundesliga"
+    name: "Bundesliga",
+    desc: "Camisetas de la Bundesliga de Alemania",
+    logo: BundesligaIcon,
   },
   {
     id: "serie-a",
-    name: "Serie A"
-  }
-]
-
+    name: "Serie A",
+    desc: "Camisetas de la Seria A de Italia",
+  },
+];
 ---
 
-<main >
-  <div class="relative mx-auto px-8 max-w-7xl py-12   md:px-12">
-    <div
-      class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 ">
+<main>
+  <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
+    <div class="grid grid-cols-1 gap-10 lg:gap-y-32 md:grid-cols-2">
       {
-        DATA.map((category) => {
-          return <Category category={category} />
+        CATEGORIES.map((category) => {
+          return <Category category={category} />;
         })
       }
     </div>

@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
 import Products from "../components/Categories.astro";
-import Footer from "@/components/Footer.astro";
-
+import SearchBar from "@/components/SearchBar.astro";
+import Hero from "@/components/Hero.astro";
 ---
 
-<BaseLayout>
-  <Hero />
+<BaseLayout title="Tienda de Camisetas">
+  <Hero
+    title="Tienda de Camisetas Online"
+    subtitle="Tienda online de camisetas de futbol para la materia Comercio Electronico"
+  />
+  <SearchBar placeholder="Buscar categorias..." />
   <Products />
-  <Footer/>
 </BaseLayout>
