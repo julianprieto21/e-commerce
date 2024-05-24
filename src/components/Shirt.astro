@@ -1,0 +1,14 @@
+---
+const { category, shirt } = Astro.props;
+---
+
+<figure>
+  <a href={`/${shirt.id}`}>
+    <img src={`/images/${category.id}/${shirt.images[0]}`} alt={`Camiseta de ${shirt.name}`} class="w-full rounded-3xl shadow-2xl bg-color-300 grid place-content-center hover:scale-105 transition"/>
+    <div>
+      <h3 class="pt-4 pl-3 mt-1 text-lg font-medium leading-6 text-color-500">
+        {shirt.name}
+      </h3>
+    </div>
+  </a>
+</figure>

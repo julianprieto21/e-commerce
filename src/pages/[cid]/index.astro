@@ -3,6 +3,7 @@ import { CATEGORIES } from "@/components/Categories.astro";
 import Category from "@/components/Category.astro";
 import Hero from "@/components/Hero.astro";
 import SearchBar from "@/components/SearchBar.astro";
+import Shirt from "@/components/Shirt.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 const { cid } = Astro.params;
 const [category] = CATEGORIES.filter((cat) => cat.id == cid);
 
-const SHIRTS = [];
+const shirts = category.items
 ---
 
 <BaseLayout title={`Camisetas | ${category.name}`}>
@@ -24,8 +25,8 @@ const SHIRTS = [];
   <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
     <div class="grid grid-cols-1 gap-10 lg:gap-y-32 md:grid-cols-2">
       {
-        SHIRTS.map((category) => {
-          return <Category category={category} />;
+        shirts.map((shirt) => {
+          return <Shirt category={category} shirt={shirt} />;
         })
       }
     </div>

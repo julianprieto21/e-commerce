@@ -1,12 +1,16 @@
 ---
 import Category from "./Category.astro";
-import BundesligaIcon from "./icons/BundesligaIcon.astro";
 
 export const CATEGORIES = [
   {
     id: "national",
     name: "National Teams",
     desc: "Camisetas de selecciones nacionales",
+    items: [
+      {id: "arg", name: "Camiseta de Argentina", price: 0, images: ["/arg-1.webp", "/arg-2.webp", "/arg-3.webp"], logo: ""},
+      {id: "deu", name: "Camiseta de Alemania", price: 0, images: ["/deu-1.webp", "/deu-2.webp", "/deu-3.webp"], logo: ""},
+      {id: "jpn", name: "Caminseta de Japón", price: 0, images: ["/jpn-1.webp", "/jpn-2.webp", "/jpn-3.webp"], logo: ""}
+  ]
   },
   {
     id: "premier-league",
@@ -17,13 +21,17 @@ export const CATEGORIES = [
     id: "bundesliga",
     name: "Bundesliga",
     desc: "Camisetas de la Bundesliga de Alemania",
-    logo: BundesligaIcon,
   },
   {
     id: "serie-a",
     name: "Serie A",
     desc: "Camisetas de la Seria A de Italia",
   },
+  {
+    id: "la-liga",
+    name: "La Liga",
+    desc: "Camisetas de La Liga de España"
+  }
 ];
 ---
 
