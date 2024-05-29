@@ -6,6 +6,7 @@ export const CATEGORIES = [
     id: "national",
     name: "National Teams",
     desc: "Camisetas de selecciones nacionales",
+    logoSrc: "/images/national/main-logo.png",
     items: [
       {id: "arg", name: "Camiseta de Argentina", price: 0, images: ["/arg-1.webp", "/arg-2.webp", "/arg-3.webp"], logo: ""},
       {id: "deu", name: "Camiseta de Alemania", price: 0, images: ["/deu-1.webp", "/deu-2.webp", "/deu-3.webp"], logo: ""},
@@ -16,23 +17,34 @@ export const CATEGORIES = [
     id: "premier-league",
     name: "Premier League",
     desc: "Camisetas de la Premier League de Inglaterra",
+    logoSrc: "/images/premier-league/main-logo.png",
+    items: [
+      { id: "cfc", name: "Camiseta del Chelsea", price: 0, images: ["/cfc-1.webp", "/cfc-2.webp", "/cfc-3.webp"], logo: "" },
+      { id: "mun", name: "Camiseta de Manchester United", price: 0, images: ["/mun-1.webp", "/mun-2.webp", "/mun-3.webp"], logo: "" },
+      { id: "mac", name: "Camiseta de Manchester City", price: 0, images: ["/mac-1.webp", "/mac-2.webp", "/mac-3.webp"], logo: "" },
+      { id: "ars", name: "Camiseta de Arsenal", price: 0, images: ["/ars-1.webp", "/ars-2.webp", "/ars-3.webp"], logo: "" },
+    ]
   },
   {
     id: "bundesliga",
     name: "Bundesliga",
     desc: "Camisetas de la Bundesliga de Alemania",
+    logoSrc: "/images/bundesliga/main-logo.png",
   },
   {
     id: "serie-a",
     name: "Serie A",
     desc: "Camisetas de la Seria A de Italia",
+    logoSrc: "/images/serie-a/main-logo.png",
   },
   {
     id: "la-liga",
     name: "La Liga",
-    desc: "Camisetas de La Liga de España"
+    desc: "Camisetas de La Liga de España",
+    logoSrc: "/images/la-liga/main-logo.png",
   }
 ];
+
 ---
 
 <main>
