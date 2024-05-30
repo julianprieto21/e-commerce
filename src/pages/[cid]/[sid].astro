@@ -1,0 +1,24 @@
+---
+import Hero from "@/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CATEGORIES } from "@/lib/CATEGORIES";
+
+export async function getStaticPaths() {
+  const paths = CATEGORIES.map((category) =>
+    category.items.map((item) => ({
+      params: { cid: category.id, sid: item.id },
+    }))
+  );
+  return paths.flat();
+}
+
+const { cid, sid } = Astro.params;
+const [category] = CATEGORIES.filter((cat) => cat.id == cid);
+const shirt = category.items.find((item) => item.id == sid);
+
+if (!shirt) {
+  return new Response("Shirt not found", { status: 404 });
+}
+---
+
+<BaseLayout title={`${category.name} | ${shirt.name}`} />
