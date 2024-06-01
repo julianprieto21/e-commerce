@@ -1,4 +1,5 @@
-import { CATEGORIES, type Category } from "@/lib/CATEGORIES";
+import { CATEGORIES } from "@/lib/CATEGORIES";
+import { Category } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 

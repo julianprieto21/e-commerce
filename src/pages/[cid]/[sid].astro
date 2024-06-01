@@ -1,7 +1,9 @@
 ---
-import Hero from "@/components/Hero.astro";
+import AddToCart from "@/components/AddToCart";
+import Gallery from "@/components/Gallery";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { CATEGORIES } from "@/lib/CATEGORIES";
+import { formatPrice } from "@/lib/utils";
 
 export async function getStaticPaths() {
   const paths = CATEGORIES.map((category) =>
@@ -21,4 +23,14 @@ if (!shirt) {
 }
 ---
 
-<BaseLayout title={`${category.name} | ${shirt.name}`} />
+<BaseLayout title={`${category.name} | ${shirt.name}`} >
+<main class="mt-14 mx-44 flex flex-row items-start justify-start">
+  <Gallery images={shirt.images} category={category} client:only="react" />
+  <section class="flex-col flex py-4 gap-4">
+    <h1 class="text-5xl font-base text-left w-full">Camiseta de {shirt.name}</h1>
+    <h2 class="font-light text-3xl text-neutral-700">{formatPrice(shirt.price)}</h2>
+    <AddToCart product={shirt} client:only="react" />
+  </section>
+</main>
+</BaseLayout>
+
