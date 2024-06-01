@@ -1,0 +1,17 @@
+---
+import CartList from "@/components/CartList";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+---
+
+<BaseLayout title="Carrito">
+  <Breadcrumbs
+    breadcrumbs={[
+      { label: "Inicio", href: "/", active: false },
+      { label: "Carrito", href: "/cart", active: true },
+    ]}
+  />
+  <Hero title="Carrito de compras" />
+  <CartList client:only="react" />
+</BaseLayout>

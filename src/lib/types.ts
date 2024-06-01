@@ -1,28 +1,40 @@
 export type Category = {
-    id: string;
-    name: string;
-    desc: string;
-    logoSrc: string;
-    items: Array<{
-      id: string;
-      name: string;
-      price: number;
-      images: Array<string>;
-    }>;
-  };
-  
+  id: string;
+  name: string;
+  desc: string;
+  logoSrc: string;
+  items: string[];
+};
 
-export type Shirt = {
-    id: string,
-    name: string,
-    price: number,
-    images: string[],
-}
-
+export type ShirtType = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  images: string[];
+};
 
 export type useCartType = {
-    items: {id: string, price: number, name: string, image: string}[],
-    addItem: (item: {id: string, price: number, name: string, image: string}) => void,
-    removeItem: (item: {id: string, price: number, name: string, image: string}) => void,
-    getItemCount: () => number,
-}
+  items: {
+    id: string;
+    price: number;
+    category: string;
+    name: string;
+    image: string;
+  }[];
+  addItem: (item: {
+    id: string;
+    price: number;
+    category: string;
+    name: string;
+    image: string;
+  }) => void;
+  removeItem: (item: {
+    id: string;
+    price: number;
+    category: string;
+    name: string;
+    image: string;
+  }) => void;
+  clearCart: () => void;
+};

@@ -1,4 +1,5 @@
-import { CATEGORIES } from "@/lib/CATEGORIES";
+import { CATEGORIES } from "@/lib/consts/CATEGORIES";
+import { SHIRTS } from "@/lib/consts/SHIRTS";
 import { Category } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -8,7 +9,9 @@ export default function Shirts({ cid }: { cid: string }) {
   const [category, setCategory] = useState<Category | undefined>(
     CATEGORIES.find((cat) => cat.id == cid)
   );
-  const [shirts, setShirts] = useState<any[]>(category?.items || []);
+  const [shirts, setShirts] = useState<any[]>(
+    SHIRTS.filter((shirt) => shirt.category == cid)
+  );
   const [search, setSearch] = useState<string>("");
 
   const handleChange = useDebouncedCallback((value: string) => {
@@ -18,7 +21,7 @@ export default function Shirts({ cid }: { cid: string }) {
   useEffect(() => {
     if (!category) return;
     setShirts(
-      category.items.filter((shirt) =>
+      shirts.filter((shirt) =>
         shirt.name
           .toLowerCase()
           .normalize("NFD")

@@ -1,8 +1,10 @@
 ---
-import { CATEGORIES } from "@/lib/CATEGORIES";
+import { CATEGORIES } from "@/lib/consts/CATEGORIES";
+import { SHIRTS } from "@/lib/consts/SHIRTS";
 import Hero from "@/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Shirts from "@/components/Shirts";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
 
 export async function getStaticPaths() {
   const paths = CATEGORIES.map((category) => ({
@@ -14,10 +16,18 @@ export async function getStaticPaths() {
 const { cid } = Astro.params;
 const [category] = CATEGORIES.filter((cat) => cat.id == cid);
 
-const shirts = category.items;
+// const shirts = category.items.map((item) =>
+//   SHIRTS.find((shirt) => shirt.id == item)
+// );
 ---
 
 <BaseLayout title={`Camisetas | ${category.name}`}>
+  <Breadcrumbs
+    breadcrumbs={[
+      { label: "Categorías", href: "/", active: false },
+      { label: category.name, href: `/${cid}`, active: true },
+    ]}
+  />
   <Hero title={category.name} subtitle={category.desc} />
   <Shirts cid={cid} client:only="react" />
 </BaseLayout>

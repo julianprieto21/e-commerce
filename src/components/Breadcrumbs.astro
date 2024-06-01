@@ -1,0 +1,27 @@
+---
+import { NavArrowRight } from "iconoir-react";
+
+const { breadcrumbs } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="pb-6 block absolute top-10 left-44 z-20">
+  <ol class="flex text-lg md:text-2xl">
+    {
+      breadcrumbs.map((breadcrumb: any, index: number) => (
+        <li
+          aria-current={breadcrumb.active}
+          class={`text-palette-200 ${
+            breadcrumb.active ? "font-semibold" : "font-extralight"
+          }`}
+        >
+          <a href={breadcrumb.href} class="hover:underline decoration-1">
+            {breadcrumb.label}
+          </a>
+          {index < breadcrumbs.length - 1 ? (
+            <span class="mx-3 inline-block text-palette-500">/</span>
+          ) : null}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
