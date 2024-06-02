@@ -1,6 +1,5 @@
 ---
 import { CATEGORIES } from "@/lib/consts/CATEGORIES";
-import { SHIRTS } from "@/lib/consts/SHIRTS";
 import Hero from "@/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Shirts from "@/components/Shirts";
@@ -16,15 +15,12 @@ export async function getStaticPaths() {
 const { cid } = Astro.params;
 const [category] = CATEGORIES.filter((cat) => cat.id == cid);
 
-// const shirts = category.items.map((item) =>
-//   SHIRTS.find((shirt) => shirt.id == item)
-// );
 ---
 
 <BaseLayout title={`Camisetas | ${category.name}`}>
   <Breadcrumbs
     breadcrumbs={[
-      { label: "Categorías", href: "/", active: false },
+      { label: "Inicio", href: "/" },
       { label: category.name, href: `/${cid}`, active: true },
     ]}
   />
