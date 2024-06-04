@@ -7,4 +7,38 @@ import Hero from "@/components/Hero.astro";
   <Hero
     title="Sobre Nosotros"
   />
+  <article class="w-[900px] mx-auto">
+    <h2 id="title">Quienes somos</h2>
+    <p id="desc">
+      Somos una empresa apasionada por el deporte y dedicada a la venta de camisetas de fútbol. 
+      Ofrecemos productos de alta calidad que representan la pasión y el espíritu de los aficionados al fútbol. 
+      Con un equipo comprometido y conocedor del deporte, buscamos brindar una experiencia de compra excepcional y personalizada a nuestros clientes.
+      </p>
+    <h2 id="title">Misión</h2>
+    <p id="desc">
+      Nuestra misión es ser el principal proveedor de camisetas de fútbol, ofreciendo una amplia variedad de productos que satisfagan las necesidades y 
+      expectativas de los aficionados. Nos esforzamos por ofrecer calidad y un excelente servicio al cliente.
+    </p>
+    <h2 id="title">Visión</h2>
+    <p id="desc">
+      Nuestra visión es ser el principal proveedor de camisetas de fútbol con amplia variedad de productos, ofreciendo excelencia en el servicio y destacándonos por la calidad.
+    </p>
+    <h2 id="title">Descripción</h2>
+    <p id="desc">
+      En nuestra tienda, encontrarás una amplia selección de camisetas de fútbol de los equipos más populares y de las ligas más importantes del mundo. Desde camisetas de equipos locales hasta selecciones nacionales, ofrecemos productos de alta calidad para que puedas apoyar a tu equipo favorito con orgullo.
+    </p>
+    <h2 id="title">Objetivo</h2>
+    <p id="desc">
+      Nuestro objetivo principal es proporcionar a nuestros clientes las mejores camisetas de fútbol disponibles en el mercado, asegurando siempre la calidad de nuestros productos. Buscamos crear una experiencia de compra memorable.
+    </p>
+  </article>
 </BaseLayout>
+
+<style>
+  #title {
+    @apply text-3xl font-bold mt-10 text-color-400;
+  }
+  #desc {
+    @apply text-lg text-color-500 mt-1 pl-2;
+  }
+</style>

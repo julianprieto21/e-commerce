@@ -4,7 +4,55 @@ import Hero from "@/components/Hero.astro";
 ---
 
 <BaseLayout title="Tienda de Camisetas | Términos y Condiciones">
-  <Hero
-    title="Términos y Condiciones"
-  />
-</BaseLayout>
+  <Hero title="Términos y Condiciones" />
+  <article class="w-[900px] mx-auto">
+    <h2 id="title">Procedimiento para cambios y devoluciones</h2>
+    <p id="desc">
+      Para hacer algún cambio o devoluciones, escribenos a nuestro whatsapp
+      (wa.me/+5492964510583)), indicando tu número pedido o orden e ítem a
+      cambiar o devolver. Se responderá de lunes a viernes de 14:00 hs a 18:00
+      hs. Tambien puedes comunicarse a través de nuestro correo:
+      ivanarielledesma@gmail.com
+    </p>
+    <h2 id="title">Costos de envio</h2>
+    <p id="desc">
+      Los costos de los envíos corren a cuenta del comprador y su valor se
+      determinaba por el método de envío y su valor Los costos serán informados
+      y deberán realizarse antes de realizar el cambio
+    </p>
+    <h2 id="title">Política de devolución</h2>
+    <p id="desc">
+      La devolución será inmediata en caso de que el paquete no haya sido
+      despachado Una vez despacha la orden, no realizamos devolución del dinero,
+      solo podremos hacer una nota de crédito por el artículo a devolver. En
+      caso de devolver la prenda con marca de uso, suciedad o sin etiqueta, no
+      se realiza ningún tipo de cambio.
+    </p>
+    <h2 id="title">Cambio de producto</h2>
+    <p id="desc">
+      El cambio de la prenda solo se realiza por talle y no por artículo, ya
+      que todos nuestros artículos poseen su guía de talle. El plazo para
+      realizar el cambio es de 12 días y deberá presentar el ticket de
+      compra o número de pedido. El valor del producto a cambiar será el que
+      pagaste originalmente, independientemente del valor que tenga del
+      momento.
+    </p>
+    <h2 id="title">Producto con fallas</h2>
+    <p id="desc">
+      Si el producto presenta fallas de fábrica, el cliente deberá
+      contactarnos por cualquier medio e incluir fotos o videos de la prenda
+      fallada. En este caso, se hará el cambio devolución del cliente y
+      nosotros nos haremos cargo de todos los gastos y el plazo de
+      comunicación es de 12 días.
+    </p>
+  </article>
+
+  <style>
+    #title {
+      @apply text-3xl font-bold mt-10 text-color-400;
+    }
+    #desc {
+      @apply text-lg text-color-500 mt-1 pl-2;
+    }
+  </style></BaseLayout
+>
