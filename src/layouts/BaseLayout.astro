@@ -1,5 +1,5 @@
 ---
-import Cart from "@/components/Cart.astro";
+import Cart from "@/components/Cart"
 import Footer from "@/components/Footer.astro";
 import Home from "@/components/Home.astro";
 
@@ -18,7 +18,7 @@ const { title } = Astro.props;
 
   <body class="bg-color-100 flex flex-col min-h-screen justify-start">
     <Home />
-    <Cart />
+    <Cart client:only="react" />
     <slot />
     <Footer />
   </body>
