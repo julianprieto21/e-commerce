@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.4.0",
+    "@mercadopago/sdk-react": "^0.0.19",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "iconoir-react": "^7.7.0",
+    "mercadopago": "^2.0.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "use-debounce": "^10.0.1",

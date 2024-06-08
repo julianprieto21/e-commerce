@@ -1,15 +1,58 @@
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/store/useCart";
 import { Trash } from "iconoir-react";
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
+import { useState } from "react";
 
 const BuyButton = () => {
+  const [preferenceId, setPreferenceId] = useState<string | null>(null);
+  console.log(import.meta.env.PUBLIC_KEY);
+  initMercadoPago(import.meta.env.PUBLIC_KEY, {
+    locale: "es-AR",
+  });
+
+  const CreatePreference = async () => {
+    try {
+      const response = await fetch("/api/create_preference", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: "Camiseta de la Casa",
+          description: "Camiseta de la Casa",
+          quantity: 1,
+          unit_price: 100,
+          category_id: 1,
+          image_url: "/images/premier-league/ars-1.webp",
+        }),
+      });
+      const id = await response.json();
+      console.log(id);
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleBuy = async () => {
+    const preferenceId = await CreatePreference();
+    if (preferenceId) {
+      setPreferenceId(preferenceId);
+    }
+  };
+
   return (
     <button
       type="button"
       title="Comprar"
       className="rounded-md px-4 py-2 bg-green-500 text-white"
+      onClick={handleBuy}
     >
       Terminar compra
+      {preferenceId && (
+        <Wallet initialization={{ preferenceId: preferenceId }} />
+      )}
     </button>
   );
 };
