@@ -14,17 +14,23 @@ export async function GET({params, request}: { params: Params, request: Request 
 
 export async function POST({params, request}: { params: Params, request: Request }) {
     let body
+    if (!request.body) return new Response(JSON.stringify({ error: 'No body' }), {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const data = await request.json()
+    console.log(data)
     try {
       body = {
-        items: [
-          {
-            id: "",
-            title: "Camiseta de la Casa",
-            quantity: 1,
-            unit_price: 100,
-            currency_id: 'ARS'
-          }
-        ],
+        items: data.map((product: any) => ({
+          id: product.id,
+          title: product.title,
+          quantity: product.quantity,
+          unit_price: product.unit_price,
+          currency_id: product.currency_id,
+          picture_url: "https://raw.githubusercontent.com/julianprieto21/e-commerce/master/public/images/bundesliga/bay-1.webp",
+        })),
         back_urls: {
           success: 'https://e-commerce-unab.vercel.app/',
           failure: 'https://e-commerce-unab.vercel.app/',
