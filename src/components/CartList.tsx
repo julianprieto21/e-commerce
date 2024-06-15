@@ -42,17 +42,21 @@ const BuyButton = () => {
   };
 
   return (
-    <button
-      type="button"
-      title="Comprar"
-      className="rounded-md px-4 py-2 bg-green-500 text-white"
-      onClick={handleBuy}
-    >
+    <>
+    {preferenceId ? (
+      <Wallet initialization={{ preferenceId: preferenceId }} />
+    ) :
+    (
+      <button
+        type="button"
+        title="Comprar"
+        className="rounded-md px-4 py-2 bg-green-500 text-white h-12 w-[280px] mt-4 mb-10"
+        onClick={handleBuy}
+      >
       Terminar compra
-      {preferenceId && (
-        <Wallet initialization={{ preferenceId: preferenceId }} />
+      </button>
       )}
-    </button>
+    </>
   );
 };
 
@@ -63,7 +67,7 @@ const ClearButton = () => {
       type="button"
       onClick={clearCart}
       title="Borrar"
-      className="rounded-md px-4 py-2 bg-red-500 text-white"
+      className="rounded-md px-4 py-2 bg-red-500 text-white mt-4 h-12 mb-10"
     >
       Vaciar carrito
     </button>
@@ -74,9 +78,9 @@ export default function CartList() {
   const { items, removeItem } = useCart((state) => state);
   return (
     <div className="flex flex-col gap-6 mx-80">
-      <div className="flex flex-row gap-4">
-        <BuyButton />
+      <div className="flex flex-row gap-4 items-start">
         <ClearButton />
+        <BuyButton />
       </div>
       {items.length > 0 ? (
         items.map((product: any) => (
