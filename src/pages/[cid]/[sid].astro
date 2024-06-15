@@ -41,7 +41,45 @@ if (!shirt) {
         {formatPrice(shirt.price)}
       </h2>
       <AddToCart product={shirt} client:only="react" />
+      <div class="mt-4 px-6 flex flex-col gap-1">
+        <table align="left" border="1" cellpadding="1" cellspacing="1" class="w-[500px]">
+          <thead>
+          <tr>
+          <th scope="col">TALLE</th>
+          <th scope="col">SISA A SISA</th>
+          <th scope="col">LARGO ESPALDA</th>
+          <th scope="col">LARGO MANGA</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <th scope="row">S</th>
+          <td>&nbsp; &nbsp; &nbsp; 64 CM&nbsp;</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 62 CM</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; 63 CM</td>
+          </tr>
+          <tr>
+          <th scope="row">M</th>
+          <td>&nbsp; &nbsp; &nbsp; 66 CM&nbsp;</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 62 CM</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; 64 CM</td>
+          </tr>
+          <tr>
+          <th scope="row">L</th>
+          <td>&nbsp; &nbsp; &nbsp; 68 CM</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 67 CM</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; 65 CM</td>
+          </tr>
+          <tr>
+          <th scope="row">XL</th>
+          <td>&nbsp; &nbsp; &nbsp; 70 CM&nbsp;</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 67 CM</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; 66 CM</td>
+          </tr>
+          </tbody>
+        </table>
+        <p>Tolerancia +/- 1,5 cm.<br/>
+      </div>
     </section>
-    <!-- <section class="flex flex-col flex-1 gap-4 w-22"></section> -->
   </main>
 </BaseLayout>
