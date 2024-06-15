@@ -20,7 +20,6 @@ export async function POST({params, request}: { params: Params, request: Request
       },
     })
     const data = await request.json()
-    console.log(data)
     try {
       body = {
         items: data.map((product: any) => ({
