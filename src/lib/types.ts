@@ -21,6 +21,7 @@ export type useCartType = {
     category: string;
     name: string;
     image: string;
+    quantity: number;
   }[];
   addItem: (item: {
     id: string;
@@ -28,6 +29,7 @@ export type useCartType = {
     category: string;
     name: string;
     image: string;
+    quantity: number;
   }) => void;
   removeItem: (item: {
     id: string;

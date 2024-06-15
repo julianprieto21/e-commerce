@@ -3,14 +3,17 @@ import { useEffect, useState } from "react";
 
 export default function AddToCart({ product }: { product: any }) {
   const [inCart, setInCart] = useState<boolean>(false);
+  const [ quantity, setQuantity ] = useState<number>(1);
   const { items, addItem, removeItem } = useCart((state) => state);
   const addToCart = () => {
+
     addItem({
       id: product.id,
       price: product.price,
       category: product.category,
       name: product.name,
       image: product.images[0],
+      quantity: quantity,
     });
     setInCart(true);
   };
@@ -32,15 +35,37 @@ export default function AddToCart({ product }: { product: any }) {
     }
   }, []);
 
+  const Counter = () => (
+    <div className="flex flex-row gap-2">
+      <button
+        onClick={() => setQuantity(quantity + 1)}
+        className="bg-color-500 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded transition"
+      >
+        +
+      </button>
+      <span className="text-color-500 bg-neutral-100 border border-color-500 rounded w-16 grid place-content-center">{quantity}</span>
+      <button
+        onClick={() => {if (quantity > 1) setQuantity(quantity - 1)}}
+        className="bg-color-500 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded transition"
+      >
+        -
+      </button>
+    </div>
+  )
+
+
   return (
     <>
       {!inCart ? (
+        <div className="flex flex-row gap-4">
         <button
           onClick={addToCart}
           className="bg-color-500 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded w-44 transition hover:scale-105"
         >
           + Añadir al carrito
         </button>
+        <Counter />
+        </div>
       ) : (
         <div className="flex flex-row gap-2">
           <button className="group bg-green-500 text-white font-semibold py-2 px-4 rounded w-44">

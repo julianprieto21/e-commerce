@@ -12,6 +12,7 @@ export const useCart = create<useCartType>()(
         category: string;
         name: string;
         image: string;
+        quantity: number;
       }) => set((state) => ({ items: [...state.items, item] })),
       removeItem: (item: {
         id: string;

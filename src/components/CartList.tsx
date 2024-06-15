@@ -14,7 +14,7 @@ const BuyButton = () => {
     const body = items.map((product: any) => ({
       id: product.name,
       title: `Camiseta de ${product.name}`,
-      quantity: 1,
+      quantity: product.quantity,
       unit_price: product.price,
       currency_id: 'ARS',
       picture_url: product.imageUrl,
@@ -97,9 +97,10 @@ export default function CartList() {
               <div className="flex flex-col gap-3">
                 <p className="text-lg font-semibold">
                   Camiseta de {product.name}
+                  <span className="pl-5">x{product.quantity}</span>
                 </p>
                 <p className="text-sm text-palette-500">
-                  {formatPrice(product.price)}
+                  {formatPrice(product.price*product.quantity)}
                 </p>
               </div>
             </div>
