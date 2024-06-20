@@ -3,7 +3,7 @@ import { Category } from "../types";
 export const CATEGORIES: Category[] = [
   {
     id: "national",
-    name: "National Teams",
+    name: "Selecciones nacionales",
     desc: "Camisetas de selecciones nacionales",
     logoSrc: "/images/national/main-logo.png",
     items: ["arg", "deu", "jpn"],
