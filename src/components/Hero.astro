@@ -1,14 +1,17 @@
 ---
+import Logo from "./Logo.astro";
+
 const { title, subtitle } = Astro.props;
 ---
 
 <main class="relative overflow-hidden">
-  <div class="relative mx-auto px-8 max-w-7xl py-24 md:px-12">
-    <div class="mx-auto text-center">
+  <div class="relative mx-auto px-8 max-w-7xl py-14 md:px-12">
+    <div class="mx-auto text-center relative flex flex-col items-center">
+      <Logo />
       <h1 class="text-color-400 font-bold md:text-6xl text-3xl tracking-tight">
         {title}
       </h1>
-      <p class="mt-8 text-color-500">
+      <p class="mt-4 text-color-500 font-medium text-xl">
         {subtitle}
       </p>
     </div>
