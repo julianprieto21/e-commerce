@@ -36,11 +36,11 @@ export default function Categories() {
                   <img
                     src={category.logoSrc}
                     alt={category.name}
-                    className="w-[1280px] h-[360px] aspect-auto rounded-3xl"
+                    className="w-[840px] h-[320px] aspect-auto rounded-3xl"
                   />
                 </picture>
                 <div>
-                  <h3 className="pt-4 pl-3 mt-1 text-2xl font-medium leading-6 text-color-500">
+                  <h3 className="pt-4 pl-3 mt-1 text-center text-2xl font-medium leading-6 text-color-500">
                     {category.name}
                   </h3>
                 </div>
