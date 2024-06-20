@@ -6,6 +6,10 @@ export default function Cart() {
   const { items } = useCart((state) => state);
 
   useEffect(() => {
+    if (items.length === 0) {
+      setQuantity(0);
+      return
+    }
     const qItems = items.map((item) => item.quantity);
     setQuantity(qItems.reduce((a, b) => a + b));
   }, [items]);
